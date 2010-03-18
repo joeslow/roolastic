@@ -1,0 +1,6 @@
+This is a little educational project combining Spring Roo and Elastic Search.
+
+I've created mainly to have a little playground to quickly try out some stuff
+but I hope to make it useful enough to be interesting for others working with
+Spring, Roo, Elastic Search, Lucene etc.
+
