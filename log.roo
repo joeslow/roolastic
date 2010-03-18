@@ -10,3 +10,4 @@ field string --fieldName title --notNull true --sizeMin 3 --comment "The image t
 field string --fieldName caption --sizeMax 500
 field string --fieldName file --sizeMax 255
 controller scaffold --class ~.web.ImageController --entity ~.model.Image
+logging setup --level DEBUG --package PROJECT 
