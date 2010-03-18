@@ -2,3 +2,11 @@
 project --topLevelPackage de.woerd.blogs.roolastic --projectName roolastic --java 6
 // Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-18 14:03:20
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-18 14:03:22
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-18 14:06:01
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-18 14:06:57
+persistence setup --provider HIBERNATE --database H2_IN_MEMORY 
+entity --class ~.model.Image
+field string --fieldName title --notNull true --sizeMin 3 --comment "The image title"
+field string --fieldName caption --sizeMax 500
+field string --fieldName file --sizeMax 255
+controller scaffold --class ~.web.ImageController --entity ~.model.Image

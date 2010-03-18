@@ -1,0 +1,27 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" id="menu" version="2.0">
+	<jsp:output omit-xml-declaration="yes"/>
+	<ul id="roo_menu">
+			
+	<li id="web_mvc_jsp_image_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_image_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_image_menu_item">
+                    <spring:url value="/image/form" var="web_mvc_jsp_create_image_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_image_menu_item_url}">
+                        <spring:message code="label.image" var="label_image"/>
+                        <spring:message arguments="${label_image}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_image_menu_item">
+                    <spring:url value="/image?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_image_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_image_menu_item_url}">
+                        <spring:message code="label.images" var="label_images"/>
+                        <spring:message arguments="${label_images}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

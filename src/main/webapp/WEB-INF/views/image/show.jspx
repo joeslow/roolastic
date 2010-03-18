@@ -1,0 +1,35 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <script type="text/javascript">dojo.require('dijit.TitlePane');</script>
+    <div id="_title_div">
+        <spring:message code="label.image" var="entity_label"/>
+        <spring:message arguments="${entity_label}" code="entity.show" var="title_msg"/>
+        <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
+        <c:if test="${not empty image}">
+            <div id="roo_image_title">
+                <label for="_title_id">Title:</label>
+                <div class="box" id="_title_id">
+                    <c:out value="${image.title}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_image_caption">
+                <label for="_caption_id">Caption:</label>
+                <div class="box" id="_caption_id">
+                    <c:out value="${image.caption}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_image_file">
+                <label for="_file_id">File:</label>
+                <div class="box" id="_file_id">
+                    <c:out value="${image.file}"/>
+                </div>
+            </div>
+            <br/>
+        </c:if>
+        <c:if test="${empty image}">
+            <spring:message arguments="${entity_label}" code="entity.not.found.single"/>
+        </c:if>
+    </div>
+</div>
