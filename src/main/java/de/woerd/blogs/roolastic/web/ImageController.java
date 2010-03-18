@@ -5,7 +5,7 @@ import de.woerd.blogs.roolastic.model.Image;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 
-@RooWebScaffold(path = "image", automaticallyMaintainView = true, formBackingObject = Image.class)
+@RooWebScaffold(path = "image", automaticallyMaintainView = false, formBackingObject = Image.class)
 @RequestMapping("/image/**")
 @Controller
 public class ImageController {

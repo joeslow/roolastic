@@ -35,6 +35,28 @@
                 <form:errors cssClass="errors" id="_file_error_id" path="file"/>
             </div>
             <br/>
+            <div id="roo_image_photographer">
+                <label for="_photographer_id">Photographer:</label>
+                <form:input cssStyle="width:250px" id="_photographer_id" maxlength="30" path="photographer" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_photographer_error_id" path="photographer"/>
+                <spring:message arguments="Photographer" code="field.invalid" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="Photographer," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_photographer_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
+            </div>
+            <br/>
+            <div id="roo_image_upload">
+                <label for="_upload_id">Upload:</label>
+                <form:input cssStyle="width:250px" id="_upload_id" maxlength="30" path="upload" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_upload_error_id" path="upload"/>
+                <spring:message arguments="Upload" code="field.invalid" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="Upload," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_upload_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
+            </div>
+            <br/>
             <div class="submit" id="roo_image_submit">
                 <spring:message code="button.update" var="update_button"/>
                 <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>

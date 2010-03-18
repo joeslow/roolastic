@@ -1,11 +1,13 @@
 package de.woerd.blogs.roolastic.model;
 
 import javax.persistence.Entity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.entity.RooEntity;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @RooJavaBean
@@ -19,8 +21,13 @@ public class Image {
 
     @Size(max = 500)
     private String caption;
-    
+
     @NotNull
     @Size(max = 255)
     private String file;
+
+    private String photographer;
+    
+    @Transient
+    private MultipartFile upload;
 }

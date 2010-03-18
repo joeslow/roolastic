@@ -27,6 +27,20 @@
                 </div>
             </div>
             <br/>
+            <div id="roo_image_photographer">
+                <label for="_photographer_id">Photographer:</label>
+                <div class="box" id="_photographer_id">
+                    <c:out value="${image.photographer}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_image_upload">
+                <label for="_upload_id">Upload:</label>
+                <div class="box" id="_upload_id">
+                    <c:out value="${image.upload}"/>
+                </div>
+            </div>
+            <br/>
         </c:if>
         <c:if test="${empty image}">
             <spring:message arguments="${entity_label}" code="entity.not.found.single"/>

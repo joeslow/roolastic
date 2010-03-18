@@ -11,3 +11,11 @@ field string --fieldName caption --sizeMax 500
 field string --fieldName file --sizeMax 255
 controller scaffold --class ~.web.ImageController --entity ~.model.Image
 logging setup --level DEBUG --package PROJECT 
+field other --fieldName upload --type java.lang.byte
+// [failed] field other --fieldName upload --type java.lang.byte --transient 
+field other --fieldName upload --type java.lang.byte --transient 
+help
+poll now
+poll now
+field string --fieldName photographer
+field other --fieldName upload --type org.springframework.web.multipart.MultipartFile

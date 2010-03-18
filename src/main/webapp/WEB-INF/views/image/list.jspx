@@ -14,6 +14,8 @@
                         <th>Title</th>
                         <th>Caption</th>
                         <th>File</th>
+                        <th>Photographer</th>
+                        <th>Upload</th>
                         <th/>
                         <th/>
                         <th/>
@@ -30,6 +32,12 @@
                         </td>
                         <td>
                             <c:out value="${fn:substring(image.file, 0, 10)}"/>
+                        </td>
+                        <td>
+                            <c:out value="${fn:substring(image.photographer, 0, 10)}"/>
+                        </td>
+                        <td>
+                            <c:out value="${fn:substring(image.upload, 0, 10)}"/>
                         </td>
                         <td>
                             <spring:url value="/image/${image.id}" var="show_form_url"/>
@@ -64,7 +72,7 @@
                     </tr>
                 </c:forEach>
                 <tr class="footer">
-                    <td colspan="7">
+                    <td colspan="9">
                         <span class="new">
                             <spring:url value="/image/form" var="create_url"/>
                             <a href="${create_url}">

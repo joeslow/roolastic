@@ -1,6 +1,7 @@
 package de.woerd.blogs.roolastic.model;
 
 import java.lang.String;
+import org.springframework.web.multipart.MultipartFile;
 
 privileged aspect Image_Roo_JavaBean {
     
@@ -26,6 +27,22 @@ privileged aspect Image_Roo_JavaBean {
     
     public void Image.setFile(String file) {
         this.file = file;
+    }
+    
+    public String Image.getPhotographer() {
+        return this.photographer;
+    }
+    
+    public void Image.setPhotographer(String photographer) {
+        this.photographer = photographer;
+    }
+    
+    public MultipartFile Image.getUpload() {
+        return this.upload;
+    }
+    
+    public void Image.setUpload(MultipartFile upload) {
+        this.upload = upload;
     }
     
 }
