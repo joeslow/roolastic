@@ -35,7 +35,7 @@ public class AppLifecycleListener implements ApplicationListener<ApplicationCont
 		logger.debug("startup");
 		
 		try {
-			//server = Server.createWebServer(null).start();
+			server = Server.createWebServer(null).start();
 		} catch (SQLException e) {
 			logger.warn("Couldn't start h2 console", e);
 		}

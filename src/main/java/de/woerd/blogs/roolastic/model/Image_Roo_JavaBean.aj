@@ -45,4 +45,12 @@ privileged aspect Image_Roo_JavaBean {
         this.upload = upload;
     }
     
+    public String Image.getMetadata() {
+        return this.metadata;
+    }
+    
+    public void Image.setMetadata(String metadata) {
+        this.metadata = metadata;
+    }
+    
 }

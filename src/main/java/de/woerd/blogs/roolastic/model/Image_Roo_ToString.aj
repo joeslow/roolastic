@@ -12,7 +12,8 @@ privileged aspect Image_Roo_ToString {
         sb.append("Caption: ").append(getCaption()).append(", ");
         sb.append("File: ").append(getFile()).append(", ");
         sb.append("Photographer: ").append(getPhotographer()).append(", ");
-        sb.append("Upload: ").append(getUpload());
+        sb.append("Upload: ").append(getUpload()).append(", ");
+        sb.append("Metadata: ").append(getMetadata());
         return sb.toString();
     }
     

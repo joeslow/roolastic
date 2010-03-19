@@ -6,7 +6,7 @@
         <spring:message arguments="${entity_label}" code="entity.create" var="title_msg"/>
         <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
         <spring:url value="/image" var="form_url"/>
-        <form:form action="${form_url}" method="POST" modelAttribute="image">
+        <form:form action="${form_url}" method="POST" modelAttribute="image" enctype="multipart/form-data">
             <form:errors cssClass="errors" delimiter="&lt;p/&gt;"/>
             <div id="roo_image_title">
                 <label for="_title_id">Title:</label>
@@ -48,7 +48,7 @@
             <br/>
             <div id="roo_image_upload">
                 <label for="_upload_id">Upload:</label>
-                <form:input cssStyle="width:250px" id="_upload_id" maxlength="30" path="upload" size="0"/>
+                <input type="file" id="_upload_id" maxlength="100" name="upload" size="0" />
                 <br/>
                 <form:errors cssClass="errors" id="_upload_error_id" path="upload"/>
                 <spring:message arguments="Upload" code="field.invalid" var="field_invalid"/>

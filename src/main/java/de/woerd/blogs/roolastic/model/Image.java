@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Type;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -27,7 +29,10 @@ public class Image {
     private String file;
 
     private String photographer;
-    
+
     @Transient
     private MultipartFile upload;
+    
+    @Type(type = "text")
+    private String metadata;
 }
