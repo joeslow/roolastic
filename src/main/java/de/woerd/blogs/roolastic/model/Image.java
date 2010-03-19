@@ -5,6 +5,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.annotations.Type;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RooJavaBean
 @RooToString
 @RooEntity
+@JsonIgnoreProperties({"upload", "ajc$interField$de_woerd_blogs_roolastic_model_Image_Roo_Entity$id", "ajc$interField$de_woerd_blogs_roolastic_model_Image_Roo_Entity$version"})
 public class Image {
 
     @NotNull

@@ -63,7 +63,8 @@ public class ImageController {
 				Directory dir = it.next();
 				for(Iterator<Tag> iit = dir.getTagIterator(); iit.hasNext();) {
 					Tag tag = iit.next();
-					builder.append(String.format("%s: [[%s]: %s]\n", dir.getName(), tag.getTagName(), tag.toString()));
+					builder.append(tag.toString());
+					builder.append("\n");
 				}
 			}
 			image.setMetadata(builder.toString());
