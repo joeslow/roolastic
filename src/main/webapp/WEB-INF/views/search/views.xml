@@ -7,4 +7,7 @@
     <definition extends="default" name="search/result">
         <put-attribute name="body" value="/WEB-INF/views/search/result.jspx"/>
     </definition>
+    <definition extends="default" name="search/entityresult">
+        <put-attribute name="body" value="/WEB-INF/views/search/entityresult.jspx"/>
+    </definition>
 </tiles-definitions>

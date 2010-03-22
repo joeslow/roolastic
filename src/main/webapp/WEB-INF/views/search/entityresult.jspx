@@ -1,0 +1,27 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:roo="urn:jsptagdir:/WEB-INF/tags" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:output omit-xml-declaration="yes"/>	
+	<script type="text/javascript">dojo.require("dijit.TitlePane")</script>
+    <div id="_title">
+    	<spring:message var="app_name" code="application.name" />
+    	<spring:message var="title" code="welcome.titlepane" arguments="${app_name}" />
+    	<script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title}'}})); </script>
+		<h3>Result</h3>
+		<c:if test="${not empty results}">
+			<ol>
+			<c:forEach items="${results}" var="result">
+				<li>
+					ID:<c:out value="${result.id}" /><br/>
+					Title:<c:out value="${result.title}" /><br/>
+					Caption:<c:out value="${result.caption}" /><br/>
+				
+				</li>
+			</c:forEach>
+			</ol>
+		</c:if>
+		
+		
+		<c:if test="${empty results}">
+			<h3>Keine Ergebnisse</h3>
+		</c:if>
+	</div>
+</div>

@@ -11,6 +11,7 @@
 		<fieldset>
 			<label for="search">Search</label><textarea id="search" name="q" cols="40" rows="10"></textarea>
 			<input type="submit" name="submit" value="Suchen" />
+			<p>Button above</p>
 		</fieldset>
 		</form>
 	</div>
