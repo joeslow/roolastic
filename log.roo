@@ -26,3 +26,6 @@ jms setup --provider ACTIVEMQ_IN_MEMORY
 field jms template --class ~.search.IndexService
 jms listener class --class ~.search.IndexerSlave
 // Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-19 16:57:55
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-22 14:45:58
+controller class --class ~.web.SearchController
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-22 14:50:31
