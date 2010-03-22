@@ -34,11 +34,11 @@ public class AppLifecycleListener implements ApplicationListener<ApplicationCont
 	public void init() {
 		logger.debug("startup");
 		
-		try {
-			server = Server.createWebServer(null).start();
-		} catch (SQLException e) {
-			logger.warn("Couldn't start h2 console", e);
-		}
+//		try {
+//			server = Server.createWebServer(null).start();
+//		} catch (SQLException e) {
+//			logger.warn("Couldn't start h2 console", e);
+//		}
 	}
 	
 	@Override
