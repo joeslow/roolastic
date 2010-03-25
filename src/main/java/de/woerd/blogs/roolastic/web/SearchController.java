@@ -34,8 +34,8 @@ public class SearchController {
     	return "search/result";
     }
     
-    @RequestMapping(method = RequestMethod.GET, params = {"qe"})
-    public String getEntities(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "qe") String q) throws JsonParseException, JsonMappingException, IOException {
+    @RequestMapping(method = RequestMethod.GET, params = {"entity","q"})
+    public String getEntities(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "q") String q) throws JsonParseException, JsonMappingException, IOException {
     	
     	List<Image> results = new ArrayList<Image>();
     	ObjectMapper mapper = new ObjectMapper();
