@@ -9,9 +9,8 @@
 		<spring:url value="/search" var="form_url"/>
 		<form action="${form_url}" method="get" >
 		<fieldset>
-			<label for="search">Search</label><textarea id="search" name="q" cols="40" rows="10"></textarea>
+			<label for="search">Search</label><textarea id="search" name="q" cols="40" rows="5">{ query : { term : { title: "test" } } }</textarea><br/>
 			<input type="submit" name="submit" value="Suchen" />
-			<p>Button above</p>
 		</fieldset>
 		</form>
 	</div>
