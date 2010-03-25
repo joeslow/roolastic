@@ -32,3 +32,32 @@ controller class --class ~.web.SearchController
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-25 10:21:40
 // Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-25 10:31:30
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-25 12:37:34
+// [failed] entity --class de.woerd.blogs.roolastic.model.User
+// [failed] field string --fieldName username --notNull true --sizeMin 3
+entity --class de.woerd.blogs.roolastic.model.RoolasticUser
+field string --fieldName username --notNull true --sizeMin 3
+field string --fieldName password --notNull true --sizeMin 4
+controller scaffold --class ~.web.UserController --entity ~.model.RoolasticUser
+entity --class ~.model.Authority
+field string --fieldName name --notNull true --sizeMin 5 --sizeMax 20
+field set --fieldName authorities --element ~.model.Authority --class ~.model.RoolasticUser
+security setup
+hint
+hint topics
+hint general
+help
+class --class ~.security.UserDao
+finder list --class ~.model.RoolasticUser
+finder add findRoolasticUsersByUsername
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-25 15:32:14
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-25 15:45:21
+entity --class ~.model.MyTestEnt
+field string --fieldName name --notNull true --sizeMin 3 --sizeMax 10
+controller scaffold --class ~.model.MyTestEnt
+controller scaffold --class ~.web.TestController --entity ~.model.MyTestEnt
+controller scaffold --class ~.web.AuthorityController --entity ~.model.Authority
+// [failed] controller scaffold --class ~.web.UserController --entity ~.model.RoolasticUser
+poll now
+controller scaffold --class ~.web.UserController --entity ~.model.RoolasticUser
+poll status
+poll now

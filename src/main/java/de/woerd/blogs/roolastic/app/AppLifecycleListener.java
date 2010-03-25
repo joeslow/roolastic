@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.context.event.ContextStartedEvent;
 import org.springframework.context.event.ContextStoppedEvent;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ClassUtils;
 
 /**
@@ -20,7 +20,7 @@ import org.springframework.util.ClassUtils;
  * @author joerg
  *
  */
-@Component
+@Service
 public class AppLifecycleListener implements ApplicationListener<ApplicationContextEvent> {
 
 	final static Logger logger = LoggerFactory.getLogger(AppLifecycleListener.class);
@@ -34,11 +34,11 @@ public class AppLifecycleListener implements ApplicationListener<ApplicationCont
 	public void init() {
 		logger.debug("startup");
 		
-//		try {
-//			server = Server.createWebServer(null).start();
-//		} catch (SQLException e) {
-//			logger.warn("Couldn't start h2 console", e);
-//		}
+		try {
+			server = Server.createWebServer(null).start();
+		} catch (SQLException e) {
+			logger.warn("Couldn't start h2 console", e);
+		}
 	}
 	
 	@Override

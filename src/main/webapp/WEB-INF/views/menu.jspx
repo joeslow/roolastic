@@ -37,5 +37,54 @@
                 </li>
             </ul>
         </li>
+    <li id="web_mvc_jsp_roolasticuser_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_roolasticuser_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_roolasticuser_menu_item">
+                    <spring:url value="/roolasticuser/form" var="web_mvc_jsp_create_roolasticuser_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_roolasticuser_menu_item_url}">
+                        <spring:message code="label.roolasticuser" var="label_roolasticuser"/>
+                        <spring:message arguments="${label_roolasticuser}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_roolasticuser_menu_item">
+                    <spring:url value="/roolasticuser?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_roolasticuser_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_roolasticuser_menu_item_url}">
+                        <spring:message code="label.roolasticusers" var="label_roolasticusers"/>
+                        <spring:message arguments="${label_roolasticusers}" code="global.menu.list"/>
+                    </a>
+                </li>
+            <li id="finder_findroolasticusersbyusername_menu_item">
+                    <spring:url value="/roolasticuser/find/ByUsername/form" var="finder_findroolasticusersbyusername_menu_item_url"/>
+                    <a href="${finder_findroolasticusersbyusername_menu_item_url}">
+                        <spring:message code="label.username" var="label_username"/>
+                        <spring:message arguments="${label_username}" code="global.menu.find"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    <li id="web_mvc_jsp_authority_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_authority_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_authority_menu_item">
+                    <spring:url value="/authority/form" var="web_mvc_jsp_create_authority_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_authority_menu_item_url}">
+                        <spring:message code="label.authority" var="label_authority"/>
+                        <spring:message arguments="${label_authority}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_authority_menu_item">
+                    <spring:url value="/authority?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_authority_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_authority_menu_item_url}">
+                        <spring:message code="label.authoritys" var="label_authoritys"/>
+                        <spring:message arguments="${label_authoritys}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>

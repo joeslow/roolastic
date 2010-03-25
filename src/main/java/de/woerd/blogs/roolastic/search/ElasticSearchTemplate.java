@@ -1,9 +1,7 @@
 package de.woerd.blogs.roolastic.search;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -35,8 +33,6 @@ public class ElasticSearchTemplate {
 	
 	private Server server;
 	private Client client;
-	
-	private Map<String, Integer> nodeAddresses = new HashMap<String, Integer>();
 	
 	@Value("${elasticsearch.default.index}")
 	private String defaultIndex;
@@ -96,12 +92,6 @@ public class ElasticSearchTemplate {
 		}
 		return result;
 	}
-	
-	
-
-	public void setNodeAddresses(Map<String, Integer> nodeAddresses) {
-		this.nodeAddresses = nodeAddresses;
-	}
-	
+		
 	
 }
