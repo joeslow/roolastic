@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -13,10 +12,12 @@ import org.elasticsearch.ElasticSearchException;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.client.Client;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.util.transport.InetSocketTransportAddress;
+import org.elasticsearch.server.Server;
+import org.elasticsearch.server.ServerBuilder;
+import org.elasticsearch.util.settings.ImmutableSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,26 +33,35 @@ public class ElasticSearchTemplate {
 	
 	final static Logger logger = LoggerFactory.getLogger(ElasticSearchTemplate.class);
 	
-	private TransportClient client;
+	private Server server;
+	private Client client;
 	
 	private Map<String, Integer> nodeAddresses = new HashMap<String, Integer>();
 	
 	@Value("${elasticsearch.default.index}")
 	private String defaultIndex;
 	
+	@Value("${node.data}")
+	private boolean nodeData;
+	
+	@Value("${node.local}")
+	private boolean nodeLocal;
+	
 	@PostConstruct
 	public void init() {
-		client = new TransportClient();
-		for(Entry<String, Integer> nodeAddress : nodeAddresses.entrySet()) {
-			client.addTransportAddress(new InetSocketTransportAddress(nodeAddress.getKey(), nodeAddress.getValue()));
+		try{
+			Server server = new ServerBuilder().settings(ImmutableSettings.settingsBuilder().put("node.data", nodeData).put("node.local", nodeLocal)).server();
+			client = server.client();
+		} catch(Exception e) {
+			logger.warn("Problems starting embedded elasticsearch node");
 		}
 	}
 	
 	@PreDestroy
 	public void close() {
-		if(client != null) {
+		if(server != null) {
 			try{
-				client.close();
+				server.close();
 			} catch(Exception e){}
 		}
 	}
